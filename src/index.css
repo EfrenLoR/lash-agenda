@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "./styles/variables.css";
+@import "./styles/global.css";
+@import "./styles/animations.css";
+
+@theme {
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Bodoni Moda", serif;
+}
