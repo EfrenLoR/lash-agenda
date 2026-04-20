@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbyLfxjfYlTvqmoHE4ZcxA5-iILG3xIESPNoZw5Sltf2rqkfhpDiXc-QuT3C9TKpR0LC/exec";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const saveBooking = async (bookingData) => {
   const response = await fetch(API_URL, {
