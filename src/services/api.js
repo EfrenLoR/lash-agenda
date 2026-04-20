@@ -1,6 +1,4 @@
 const API_URL = import.meta.env.VITE_API_URL;
-console.log("Mi URL de la API es:", API_URL);
-
 
 
 export const saveBooking = async (bookingData) => {
