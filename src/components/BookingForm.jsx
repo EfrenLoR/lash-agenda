@@ -95,16 +95,6 @@ const ModernScheduler = () => {
     currentDayTimes = currentDayConfig ? currentDayConfig.turnos : [];
   }
 
-  // // Filtrar disponibilidad real
-  // const availableTimes = currentDayTimes.filter(time => {
-  //   const isOccupied = bookedSlots.some(booking => {
-  //     // Normalizar la fecha por si Google regresa timestamp con la letra T (eg. "2026-04-08T06:00:00.000Z")
-  //     const fechaNormalizada = booking.fecha ? booking.fecha.substring(0, 10) : '';
-  //     return fechaNormalizada === formattedSelectedDate && booking.hora === time;
-  //   });
-  //   return !isOccupied;
-  // });
-
   // --- HANDLERS (Manejadores de Eventos) ---
   const changeWeek = (direction) => {
     setCurrentWeekStart(prev => addDays(prev, direction * 7));
@@ -204,7 +194,7 @@ const ModernScheduler = () => {
               <button
               onClick={() => {
                 const msj = `¡Hola! He agendado mi cita para ${formattedSelectedDate} a las ${formatAMPM(selectedTime)}. Te adunto mi comprobante de depósito.`
-                window.open(`https://wa.me/4493832267?text=${encodeURIComponent(msj)}`, '_blank');
+                window.open(`https://wa.me/524494261584?text=${encodeURIComponent(msj)}`, '_blank');
               }}
               className="w-full bg-[#F8E3D7] text-white py-3 rounded-full font-bold shadow-lg hover:bg-[#f5d4c7] transition-colors hover:scale-[1.02] flex items-center justify-center gap-2"
               >

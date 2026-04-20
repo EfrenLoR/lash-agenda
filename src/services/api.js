@@ -1,4 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL;
+console.log("Mi URL de la API es:", API_URL);
+
+
 
 export const saveBooking = async (bookingData) => {
   const response = await fetch(API_URL, {
@@ -11,10 +14,11 @@ export const saveBooking = async (bookingData) => {
 };
 
 export const getBookings = async () => {
+  if (!API_URL) console.error("¡ALERTA! API_URL está vacía. Vite no leyó el .env");
+  
   try {
-    // El getTime() fuerza a que SIEMPRE descargue los datos frescos
-    const urlFresco = `${API_URL}?action=getBookings&t=${new Date().getTime()}`;
-    const response = await fetch(urlFresco);
+    const urlSinCache = `${API_URL}?action=getBookings&t=${new Date().getTime()}`;
+    const response = await fetch(urlSinCache);
     return await response.json();
   } catch (error) {
     console.error("Error al obtener disponibilidad:", error);
